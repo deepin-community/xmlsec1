@@ -12,13 +12,16 @@ override_dh_auto_clean:
 	rm -f config.log config.cache config.status
 
 override_dh_auto_configure:
-	if [ ! -d docs.bak ]; then cp -ra docs docs.bak; fi
+
+override_dh_auto_build-arch:
 	dh_auto_configure -- \
 		--enable-manpages-build \
 		--with-html-dir=\$${prefix}/share/doc/libxmlsec1-dev/html \
 		--disable-crypto-dl \
 		--disable-apps-crypto-dl \
-		--enable-soap
+		--enable-soap \
+		--enable-openssl3-engines
+	dh_auto_build --no-parallel
 
 override_dh_auto_build-indep:
 	dh_auto_configure -- \
@@ -27,7 +30,8 @@ override_dh_auto_build-indep:
 		--with-html-dir=\$${prefix}/share/doc/libxmlsec1-dev/html \
 		--disable-crypto-dl \
 		--disable-apps-crypto-dl \
-		--enable-soap
+		--enable-soap \
+		--enable-openssl3-engines
 	dh_auto_build --no-parallel
 
 override_dh_auto_test:
@@ -48,7 +52,7 @@ override_dh_installexamples:
 	dh_installexamples examples/*
 
 override_dh_installdocs:
-	dh_installdocs -X.sgml --all README debian/README.Debian
+	dh_installdocs -X.sgml --all README.md debian/README.Debian
 
 override_dh_compress:
 	dh_compress -Xexamples/

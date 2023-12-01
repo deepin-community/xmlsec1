@@ -5,7 +5,7 @@
  * This is free software; see Copyright file in the source
  * distribution for preciese wording.
  *
- * Copyright (C) 2002-2016 Aleksey Sanin <aleksey@aleksey.com>. All Rights Reserved.
+ * Copyright (C) 2002-2022 Aleksey Sanin <aleksey@aleksey.com>. All Rights Reserved.
  */
 /**
  * SECTION:x509
@@ -40,7 +40,7 @@
  * @node:               the pointer to <dsig:X509Data/> node.
  * @keyInfoCtx:         the pointer to <dsig:KeyInfo/> node processing context.
  *
- * Reads the contents of <dsig:X509Data/> node and returns it as
+ * DEPRECATED. Reads the contents of <dsig:X509Data/> node and returns it as
  * a bits mask.
  *
  * Returns: the bit mask representing the <dsig:X509Data/> node content

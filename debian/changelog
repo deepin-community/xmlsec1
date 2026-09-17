@@ -1,9 +1,3 @@
-xmlsec1 (1.2.37-3) unstable; urgency=medium
-
-  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
-
- -- tunaichao <tunaichao@uniontech.com>  Mon, 14 Sep 2026 09:21:12 +0800
-
 xmlsec1 (1.2.37-2) unstable; urgency=medium
 
   * fix build/build-indep to have the same configure flags passed. Properly
